@@ -43,6 +43,8 @@
   </scm>
     
     <properties>
+        <signature.file.version>72</signature.file.version>
+        <container.signature.file.version>20131112</container.signature.file.version>
         <project.pronom.url>http://www.nationalarchives.gov.uk/PRONOM/Default.aspx</project.pronom.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <saxon.version>9.5.1-2</saxon.version>
@@ -161,6 +163,17 @@
         </plugins>
         
     </build>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-releases</id>
+            <url>http://oss.sonatype.org/content/repositories/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>clojars.org</id>
+            <url>http://clojars.org/repo</url>
+        </pluginRepository>
+    </pluginRepositories>
     
     <profiles>
         <profile>

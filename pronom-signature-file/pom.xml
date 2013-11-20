@@ -14,7 +14,7 @@
     
     <!-- change this to get a newer signature file from PRONOM -->
     <!-- set to '-SNAPSHOT' before release, but will only build without -->
-    <version>72-SNAPSHOT</version>
+    <version>${signature.file.version}-SNAPSHOT</version>
     
     
     <name>${project.artifactId}</name>
@@ -40,7 +40,7 @@
                         </goals>
                         <configuration>
                             <url>http://nationalarchives.gov.uk/documents</url>
-                            <fromFile>DROID_SignatureFile_V${project.version}.xml</fromFile>
+                            <fromFile>DROID_SignatureFile_V${signature.file.version}.xml</fromFile>
                             <toFile>${project.build.directory}/generated-resources/wagon/signature-file.xml</toFile>
                         </configuration>
                     </execution>
@@ -62,6 +62,12 @@
                         <transformationSet>
                             <dir>${project.build.directory}/generated-resources/wagon</dir>
                             <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
+                            <parameters>
+                                <parameter>
+                                    <name>signatureVersion</name>
+                                    <value>${project.version}</value>
+                                </parameter>
+                            </parameters>
                         </transformationSet>
                     </transformationSets>
                 </configuration>

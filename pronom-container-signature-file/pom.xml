@@ -13,7 +13,7 @@
     <packaging>jar</packaging>
     
     <!-- change this to reflect the version of the container signature file from PRONOM -->
-    <version>20131112-SNAPSHOT</version>
+    <version>${container.signature.file.version}-SNAPSHOT</version>
     
     
     <name>${project.artifactId}</name>
@@ -61,6 +61,12 @@
                         <transformationSet>
                             <dir>${project.build.directory}/generated-resources/wagon</dir>
                             <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
+                            <parameters>
+                                <parameter>
+                                    <name>signatureVersion</name>
+                                    <value>${project.version}</value>
+                                </parameter>
+                            </parameters>
                         </transformationSet>
                     </transformationSets>
                 </configuration>
